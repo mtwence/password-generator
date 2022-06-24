@@ -18,8 +18,12 @@ function generatePassword() {
     alert("Password must be between 8-128 characters")
     var confirmLength =(prompt("How many characters? Choose between 8-128"));
   }
+  // $ confirm functions for character types to incldue
+  var confirmCaseLower = confirm("Click OK to include lower case letters");
+  var confirmCaseUpper = confirm("Click OK to include upper case letters");
+  var confirmSpecChars = confirm("Click OK to include special characters");
+  var confirmNumeral = confirm("Click OK to include numerals");
   
-  while
 }
 
 // Write password to the #password input
