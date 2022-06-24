@@ -23,7 +23,17 @@ function generatePassword() {
   var confirmCaseUpper = confirm("Click OK to include upper case letters");
   var confirmSpecChars = confirm("Click OK to include special characters");
   var confirmNumeral = confirm("Click OK to include numerals");
-  
+
+// Alert for not chooseing one type 
+    while(confirmcCaseLower === false && confirmCaseUpper === false && confirmSpecChars === false && confirmNumeral === false) {
+      alert("You must choose at least one character type to include");
+      var confirmCaseLower = confirm("Click OK to include lower case letters");
+      var confirmCaseUpper = confirm("Click OK to include upper case letters");
+      var confirmSpecChars = confirm("Click OK to include special characters");
+      var confirmNumeral = confirm("Click OK to include numerals");
+    }
+    
+
 }
 
 // Write password to the #password input
