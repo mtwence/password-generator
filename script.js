@@ -13,7 +13,12 @@ generateBtn.addEventListener("click", writePassword);
 // Password Generation logic
 function generatePassword() {
   var confirmLength =(prompt("How many characters? Choose between 8-128"));
-
+  // Alert for insufficient character length
+  while(confirmLength <= 7 || >= 128) {
+    alert("Password must be between 8-128 characters")
+    var confirmLength =(prompt("How many characters? Choose between 8-128"));
+  }
+  
   while
 }
 
