@@ -6,9 +6,13 @@ var caseLower = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
  
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// Password Generation logic
+function generatePassword() {
+  var confirmLength =(prompt("How many characters? Choose between 8-128"));
 
   while
 }
