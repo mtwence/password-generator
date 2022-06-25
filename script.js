@@ -54,7 +54,7 @@ function generatePassword() {
   for (var i = 0; i < confirmLength; i++) {
     finalPassword.push(randomizer(passwordOptions))
   }
-
+  return finalPassword.join("")
 }
 
 
