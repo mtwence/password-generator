@@ -51,9 +51,14 @@ function generatePassword() {
     passwordOptions = passwordOptions.concat(number)
 
   }
-
+  for (var i = 0; i < confirmLength; i++) {
+    finalPassword.push(randomizer(passwordOptions))
+  }
 
 }
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
