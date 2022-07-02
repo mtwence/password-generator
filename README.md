@@ -22,7 +22,7 @@ A little handly web tool that allows you to generate a random password for yours
 4. Include special characters (yes/no)
 5. Include numeric values (yes/no)
 
-Once the user has completed all the necessary prompts a random password is displayed on your screen
+Once the user has completed all the necessary prompts, a random password is displayed on your screen.
 
 ## Technologies Used
 
@@ -44,17 +44,46 @@ Once the user has completed all the necessary prompts a random password is displ
 ### Code Snippets
 
 ```ruby
+function generatePassword() {
+  var confirmLength = (prompt("How many characters? Choose between 8-128"));
+  // Alert for insufficient character length
+  while (confirmLength <= 7 || confirmLength >= 128) {
+    alert("Password must be between 8-128 characters")
+    var confirmLength = (prompt("How many characters? Choose between 8-128"));
+  }
 
+  var confirmCaseLower = confirm("Click OK to include lower case letters");
+  var confirmCaseUpper = confirm("Click OK to include upper case letters");
+  var confirmSpecChars = confirm("Click OK to include special characters");
+  var confirmNumeral = confirm("Click OK to include numerals");
 ```
 
 
 ```ruby
-
+ if (confirmCaseLower === true) {
+    passwordOptions = passwordOptions.concat(caseLower)
+  }
+ if (confirmCaseUpper === true) {
+    passwordOptions = passwordOptions.concat(caseUpper)
+  }
+  if (confirmSpecChars === true) {
+    passwordOptions = passwordOptions.concat(specChar)
+  }
+  if (confirmNumeral === true) {
+    passwordOptions = passwordOptions.concat(number)
+  }
+  for (var i = 0; i < confirmLength; i++) {
+    finalPassword.push(randomizer(passwordOptions))
+  }
+  return finalPassword.join("")
 ```
 
-
+This is the actual function that randomizes the chracters for your password.
 ```ruby
-
+function randomizer(passwordOptions) {
+  var randomIndex = Math.floor(Math.random() * passwordOptions.length);
+  var randomElement = passwordOptions[randomIndex];
+  return randomElement
 ```
 
 ## User Information
