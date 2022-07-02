@@ -43,6 +43,7 @@ Once the user has completed all the necessary prompts, a random password is disp
 
 ### Code Snippets
 
+This function is what actually begins the process of creating a random password and is called on when the "generate password" button is clicked (via an event listener). Once the generate button is clicked, then the prompts appear and record the users' input. 
 ```ruby
 function generatePassword() {
   var confirmLength = (prompt("How many characters? Choose between 8-128"));
@@ -57,8 +58,9 @@ function generatePassword() {
   var confirmSpecChars = confirm("Click OK to include special characters");
   var confirmNumeral = confirm("Click OK to include numerals");
 ```
+<br>
 
-
+This block of code concatenantes the arrays for all character types, based on whether the user chose to include certain characters or not. For instance if a user only wanted numbers and special characters, then the special chracter array and the numbers array would be joined together into one single array.
 ```ruby
  if (confirmCaseLower === true) {
     passwordOptions = passwordOptions.concat(caseLower)
@@ -77,14 +79,16 @@ function generatePassword() {
   }
   return finalPassword.join("")
 ```
+<br>
 
-This is the actual function that randomizes the chracters for your password.
+From the concatenated array, this function will randomly pick an index position on the array, matching to a certain character. This function returns random chracters in the array until the character limit the user selected is reached. 
 ```ruby
 function randomizer(passwordOptions) {
   var randomIndex = Math.floor(Math.random() * passwordOptions.length);
   var randomElement = passwordOptions[randomIndex];
   return randomElement
 ```
+<br>
 
 ## User Information
 
